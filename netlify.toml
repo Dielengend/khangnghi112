@@ -1,5 +1,5 @@
 [build]
-  command = "rm -rf node_modules .next && npm install && NEXT_DISABLE_TURBOPACK=1 npm run build"
+  command = "rm -rf node_modules .next && npm install --include=dev && NEXT_DISABLE_TURBOPACK=1 npm run build"
   publish = ".next"
 
 [build.environment]
@@ -12,9 +12,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[context.production]
-  environment = { NODE_ENV = "production" }
-
-[context.deploy-preview]
-  environment = { NODE_ENV = "production" }
